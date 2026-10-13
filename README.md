@@ -1,3 +1,7 @@
+> **Production-ready GitHub Actions workflows. Save 10-20 hours of CI/CD setup. $42**
+> 
+> 🔗 [**Buy the complete collection ($42)**](https://north-dev-ai.github.io/north-ai-website/workflow-templates.html) | ⭐ Star this repo if you find it useful!
+
 # GitHub Actions Workflow Templates Collection
 
 **Professional, production-ready GitHub Actions workflows for modern development teams.**
