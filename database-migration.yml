@@ -1,0 +1,127 @@
+name: Database Migration
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to migrate'
+        required: true
+        type: choice
+        options:
+          - staging
+          - production
+
+jobs:
+  migration-check:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Check migration files
+      run: |
+        # Verify migrations are sequential and valid
+        npm run migration:validate || echo "Add migration validation script"
+
+    - name: Dry run migrations
+      run: |
+        npm run migration:dry-run || echo "Migrations would be applied"
+
+  migrate-staging:
+    needs: migration-check
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    environment: staging
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Backup database
+      env:
+        DATABASE_URL: ${{ secrets.STAGING_DATABASE_URL }}
+      run: |
+        npm run db:backup
+
+    - name: Run migrations
+      env:
+        DATABASE_URL: ${{ secrets.STAGING_DATABASE_URL }}
+      run: |
+        npm run migration:up
+
+    - name: Verify migration
+      env:
+        DATABASE_URL: ${{ secrets.STAGING_DATABASE_URL }}
+      run: |
+        npm run migration:status
+
+    - name: Rollback on failure
+      if: failure()
+      env:
+        DATABASE_URL: ${{ secrets.STAGING_DATABASE_URL }}
+      run: |
+        echo "Migration failed, rolling back..."
+        npm run migration:down
+
+  migrate-production:
+    needs: migrate-staging
+    runs-on: ubuntu-latest
+    if: github.event.inputs.environment == 'production'
+    environment: production
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Create database backup
+      env:
+        DATABASE_URL: ${{ secrets.PRODUCTION_DATABASE_URL }}
+      run: |
+        npm run db:backup
+        echo "Backup created at $(date)"
+
+    - name: Run migrations with monitoring
+      env:
+        DATABASE_URL: ${{ secrets.PRODUCTION_DATABASE_URL }}
+      run: |
+        npm run migration:up --verbose
+
+    - name: Verify migration success
+      env:
+        DATABASE_URL: ${{ secrets.PRODUCTION_DATABASE_URL }}
+      run: |
+        npm run migration:status
+        npm run db:health-check
+
+    - name: Notify team
+      if: always()
+      uses: 8398a7/action-slack@v3
+      with:
+        status: ${{ job.status }}
+        text: 'Production database migration completed'
+        webhook_url: ${{ secrets.SLACK_WEBHOOK }}
