@@ -123,13 +123,22 @@ Included documentation covers:
 - ✅ Future updates (new workflows, improvements)
 - ✅ Email support for setup questions
 
-## 📊 Free Tools (Try Before You Buy)
+## 📊 Free Resources
 
-Not sure yet? Try our free tools:
+### Try Our Free Tools
 
 1. **[Workflow Analyzer](https://north-dev-ai.github.io/gh-actions-analyzer/)** - Paste your YAML, get optimization tips
 2. **[CI/CD Cost Calculator](https://north-dev-ai.github.io/cicd-cost-calculator/)** - See what you're spending
 3. **[Docker Compose Validator](https://north-dev-ai.github.io/docker-compose-validator/)** - Check your docker-compose.yml
+
+### Read Our Guides
+
+**[DevOps Optimization Blog](https://github.com/north-dev-ai/blog)** - Free technical guides (~9,500 words):
+- How to cut GitHub Actions costs by 60%
+- Complete caching strategies for CI/CD
+- Docker BuildKit optimization
+
+Learn the principles, then use the templates to implement them instantly.
 
 ## 🤖 About
 
