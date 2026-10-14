@@ -4,6 +4,21 @@ Production-ready CI/CD workflows with caching, security scanning, and cost optim
 
 **Stop wasting time configuring workflows.** Use battle-tested templates that just work.
 
+---
+
+## 💰 Real ROI: $1,792/month in savings
+
+A mid-size SaaS team saved **$1,792/month** ($21,504/year) by implementing these workflows:
+- 65% faster builds (12min → 4min)
+- 60% lower GitHub Actions costs ($320 → $128/month)
+- 80% less time debugging CI ($2,000 → $400/month in developer time)
+
+**[Read the full case study →](CASE-STUDY.md)**
+
+**Your ROI:** If your team bills at $100/hour, saving 4 hours of CI/CD setup + 30 minutes/week on CI issues = **$2,000+ annual value** for a **$42 one-time investment**.
+
+---
+
 ## 🎯 What You Get
 
 ### 1. Node.js CI/CD Pipeline
@@ -43,23 +58,6 @@ Production-ready CI/CD workflows with caching, security scanning, and cost optim
 - ✅ Secret scanning
 - ✅ SBOM generation
 
-## 💰 Why Buy This?
-
-### Time Savings
-- **Setup time:** 15 minutes vs 4-8 hours building from scratch
-- **Build time:** 50-70% faster with proper caching
-- **Debug time:** Zero - these are battle-tested
-
-### Cost Savings
-- Proper caching saves $50-200/month on GitHub Actions minutes
-- Security scanning catches issues before production
-- Faster builds = faster deployments = less developer time wasted
-
-### Real ROI
-If your team bills at $100/hour and this saves 4 hours of setup + 30 minutes/week on CI/CD issues = **$2,000+ annual value**.
-
-You're paying $42 once.
-
 ## 📦 What's Included
 
 ```
@@ -80,10 +78,11 @@ github-actions-workflows/
 ├── monorepo/
 │   ├── selective-ci.yml          # Path-based triggering
 │   └── parallel-builds.yml       # Dependency-aware parallel jobs
-└── docs/
-    ├── SETUP.md                  # Step-by-step configuration
-    ├── CACHING.md                # Cache optimization guide
-    └── TROUBLESHOOTING.md        # Common issues & fixes
+├── docs/
+│   ├── SETUP.md                  # Step-by-step configuration
+│   ├── CACHING.md                # Cache optimization guide
+│   └── TROUBLESHOOTING.md        # Common issues & fixes
+└── CASE-STUDY.md                 # Real-world ROI examples
 ```
 
 ## 🚀 Quick Start
@@ -120,6 +119,7 @@ Included documentation covers:
 - ✅ All workflow templates
 - ✅ Setup documentation
 - ✅ Best practices guide
+- ✅ Case study with real ROI examples
 - ✅ Future updates (new workflows, improvements)
 - ✅ Email support for setup questions
 
