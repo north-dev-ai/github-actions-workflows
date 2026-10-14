@@ -19,6 +19,22 @@ A mid-size SaaS team saved **$1,792/month** ($21,504/year) by implementing these
 
 ---
 
+## 👥 Who This Is For
+
+**Perfect if you:**
+- ✅ Are setting up CI/CD for a new project (save 4-8 hours of configuration)
+- ✅ Have slow or expensive GitHub Actions workflows (get optimizations that took me months to learn)
+- ✅ Need security scanning but don't know where to start (CodeQL, Trivy, and secret scanning included)
+- ✅ Run a monorepo and want selective testing (only test what changed)
+- ✅ Want production-ready templates instead of copying from Stack Overflow
+
+**Not for you if:**
+- ❌ You already have perfectly optimized workflows (though the case study might give you new ideas)
+- ❌ You don't use GitHub Actions
+- ❌ You prefer building everything from scratch
+
+---
+
 ## 🎯 What You Get
 
 ### 1. Node.js CI/CD Pipeline
@@ -112,6 +128,33 @@ Included documentation covers:
 - Secrets management
 - Multi-environment deployments
 
+---
+
+## ❓ FAQ
+
+**Q: Do these work with private repositories?**  
+A: Yes. All workflows work with both public and private repos.
+
+**Q: Can I modify the workflows?**  
+A: Absolutely. They're yours to customize. Clear comments make it easy.
+
+**Q: Do you provide support?**  
+A: Email support for setup questions is included. I'll help you get running.
+
+**Q: What if I only need one workflow (e.g., just Node.js)?**  
+A: The package includes all workflows, but you only use what you need. Think of it as future-proofing.
+
+**Q: How do I receive the files after payment?**  
+A: Email your payment confirmation to n.mcisaac@iqcn.live. You'll receive a download link within 24 hours.
+
+**Q: Are updates included?**  
+A: Yes. All future improvements and new workflows are included at no extra cost.
+
+**Q: What if these don't work for my setup?**  
+A: Email me within 7 days with your specific issue. I'll either help you fix it or refund your payment.
+
+---
+
 ## 💵 Price: $42
 
 **One-time payment. Lifetime access. All updates included.**
@@ -122,6 +165,7 @@ Included documentation covers:
 - ✅ Case study with real ROI examples
 - ✅ Future updates (new workflows, improvements)
 - ✅ Email support for setup questions
+- ✅ 7-day satisfaction guarantee
 
 ## 📊 Free Resources
 
@@ -133,10 +177,12 @@ Included documentation covers:
 
 ### Read Our Guides
 
-**[DevOps Optimization Blog](https://github.com/north-dev-ai/blog)** - Free technical guides (~9,500 words):
+**[DevOps Optimization Blog](https://north-dev-ai.github.io/blog/)** - Free technical guides (~14,200 words):
 - How to cut GitHub Actions costs by 60%
 - Complete caching strategies for CI/CD
 - Docker BuildKit optimization
+- Secrets management best practices
+- Monorepo CI/CD strategies
 
 Learn the principles, then use the templates to implement them instantly.
 
